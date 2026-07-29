@@ -1,0 +1,17 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.DifferentiationTheoryGateauxFrEchetLemmaCanonicalLaneLean.GateauxDerivative
+import HautevilleHouse.DifferentiationTheoryGateauxFrEchetLemmaCanonicalLaneLean.FrechetDerivative
+import HautevilleHouse.DifferentiationTheoryGateauxFrEchetLemmaCanonicalLaneLean.GateauxFrechetComparison
+
+namespace HautevilleHouse
+namespace DifferentiationTheoryGateauxFrEchetLemmaCanonicalLaneLean
+
+def ConstrainedGateauxFrechetClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_gateaux_frechet_endgame (A : AdmissibleClass) :
+    ConstrainedGateauxFrechetClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end HautevilleHouse.DifferentiationTheoryGateauxFrEchetLemmaCanonicalLaneLean
+end HautevilleHouse
